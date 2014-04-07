@@ -32,6 +32,7 @@ Third parameter is *optional* and needs to be parseable by [`strtotime()`](http:
     $ifconfig = Cache::store('ifconfig', function(){
         $jsonContent = file_get_contents('http://ifconfig.me/all.json');
         $jsonArray = json_decode($jsonContent, true);
+        return $jsonArray;
     }, '10 min');
 
     var_dump($ifconfig);
